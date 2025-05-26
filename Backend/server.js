@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors')
 const multer  = require('multer')
+const ocrRoutes = require('./routes/ocrRoutes');
 
 dotenv.config({path:'./config/config.env'});
 
@@ -14,6 +15,7 @@ app.use(cors())
 
 // app.use('/api/v1/mileagecar',mileagecar);
 // app.use('/api/v1/Advance',Advance);
+app.use('/api/v1/ocr',ocrRoutes)
 
 const upload = multer({ dest: 'uploads/' });
 
