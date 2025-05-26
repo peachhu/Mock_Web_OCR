@@ -2,6 +2,7 @@ const Tesseract = require('tesseract.js');
 const path = require('path');
 const { createWorker } = require('tesseract.js');
 
+
 const handleOCR = async (req, res) => {
 
     //handle no file upload
