@@ -1,6 +1,5 @@
 const Tesseract = require('tesseract.js');
 const path = require('path');
-const { createWorker } = require('tesseract.js');
 
 
 const handleOCR = async (req, res) => {
@@ -27,15 +26,5 @@ const handleOCR = async (req, res) => {
 };
 
 
-//automic download language from internet
-const worker = createWorker();
 
-await worker.load();
-await worker.loadLanguage('eng+tha');
-await worker.initialize('eng+tha');
-
-const { data: { text } } = await worker.recognize(req.file.path);
-await worker.terminate();
-
-
-module.exports = { handleOCR };
+module.exports = handleOCR;

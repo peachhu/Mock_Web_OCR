@@ -7,7 +7,7 @@ const router = express.Router();
 
 const upload = multer({dest: 'uploads/'})
 
-router.post('/ocr', upload.single('image'),handleOCR);
+router.post('/ocr', upload.single('image'), handleOCR);
 
 
 module.exports = router;
