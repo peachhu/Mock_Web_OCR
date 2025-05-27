@@ -1,8 +1,8 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors')
-const multer  = require('multer')
-const ocrRoutes = require('./routes/ocrRoutes');
+import express from 'express';
+import dotenv  from 'dotenv';
+import cors from 'cors'
+import multer from 'multer'
+import  ocrRoutes  from './routes/ocrRoutes.js';
 
 dotenv.config({path:'./config/config.env'});
 

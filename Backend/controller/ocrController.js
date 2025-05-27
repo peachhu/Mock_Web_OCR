@@ -1,9 +1,9 @@
-const Tesseract = require('tesseract.js');
-const path = require('path');
-import { performOCR } from '../ocr';
+import Tesseract from 'tesseract.js';
+import path from 'path';
+import { performOCR } from '../ocr.js';
 
 
-const handleOCR = async (req, res) => {
+export const handleOCR = async (req, res) => {
 
     //handle no file upload
   if (!req.file) return res.status(400).send('No picture or file uploaded.');
@@ -22,4 +22,4 @@ const handleOCR = async (req, res) => {
 
 
 
-module.exports = handleOCR;
+
