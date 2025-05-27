@@ -1,5 +1,6 @@
 const Tesseract = require('tesseract.js');
 const path = require('path');
+import { performOCR } from '../ocr';
 
 
 const handleOCR = async (req, res) => {
@@ -10,13 +11,7 @@ const handleOCR = async (req, res) => {
   try {
 
     //handle OCR (Process the Image)
-    const { data: { text } } = await Tesseract.recognize(
-
-        // Full path to the uploaded file
-      path.resolve(req.file.path),
-        'eng+tha'
-    );
-
+     const text = await performOCR(req.file.path);
     //extract text answer to json response
     res.json({ text });
 
