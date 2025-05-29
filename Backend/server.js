@@ -11,7 +11,11 @@ dotenv.config({path:'./config/config.env'});
 //Route files
 
 const app = express();
-app.use(cors())
+
+app.use(cors({
+  origin: 'http://localhost:3000', // ที่อยู่ frontend
+  credentials: true,
+}));
 
 // app.use('/api/v1/mileagecar',mileagecar);
 // app.use('/api/v1/Advance',Advance);
