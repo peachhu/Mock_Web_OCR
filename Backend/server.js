@@ -19,7 +19,7 @@ app.use(cors({
 
 // app.use('/api/v1/mileagecar',mileagecar);
 // app.use('/api/v1/Advance',Advance);
-app.use('/api/v1/ocr',ocrRoutes)
+app.use('/api/v1',ocrRoutes)
 
 const upload = multer({ dest: 'uploads/' });
 
